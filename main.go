@@ -18,4 +18,5 @@ func main() {
 	hello()
 	r := runtimeG{}
 	fmt.Println(r)
+	fmt.Println(r)
 }
