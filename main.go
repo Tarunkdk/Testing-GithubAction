@@ -74,5 +74,6 @@ func main() {
 	//wg.Wait()
 	fmt.Println(time.Since(start))
 	fmt.Println("main function finished executing")
+	fmt.Println("main function finished executing")
 
 }
