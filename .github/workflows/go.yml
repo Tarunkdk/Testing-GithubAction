@@ -10,7 +10,7 @@ jobs:
   audit:
     runs-on: ubuntu-20.04
     steps:
-    - name: Checkout
+    - name: Checkout code
     - uses: actions/checkout@v2
 
     - name: Set up Go
@@ -27,8 +27,8 @@ jobs:
     - name: Run go vet
       run: go vet ./...
 
-   - name : Install goreportcard tool
-   - run: |
+    - name : Install goreportcard tool
+    - run: |
           go get github.com/gojp/goreportcard 
           cd goreportcard 
           go install ./vendor/github.com/alecthomas/gometalinter
@@ -39,8 +39,8 @@ jobs:
           go install honnef.co/go/tools/cmd/staticcheck@latest
           go install ./cmd/goreportcard-cli
 
-   - name: Run Tools
-   - run: | 
+    - name: Run Tools
+    - run: | 
           goreportcard-cli ./...
           staticcheck ./...
 
