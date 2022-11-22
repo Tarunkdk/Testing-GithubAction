@@ -32,7 +32,7 @@ jobs:
 
     - name: Run staticcheck
       run: staticcheck ./...
-      if: failure()
+     - if: failure()
       run : exit(1)
 
     - name: Install golint
