@@ -7,10 +7,10 @@ on:
     branches: [main]
 
 jobs:
-
   audit:
     runs-on: ubuntu-20.04
     steps:
+    - name: Checkout
     - uses: actions/checkout@v2
 
     - name: Set up Go
@@ -41,7 +41,7 @@ jobs:
 
    - name: Run Tools
    - run: | 
-   goreportcard-cli ./...
-   staticcheck ./...
+          goreportcard-cli ./...
+          staticcheck ./...
 
    
