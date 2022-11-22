@@ -27,16 +27,21 @@ jobs:
     - name: Run go vet
       run: go vet ./...
 
-    - name: Install staticcheck
-      run: go install honnef.co/go/tools/cmd/staticcheck@latest
+   - name : Install goreportcard tool
+   - run: |
+          go get github.com/gojp/goreportcard 
+          cd goreportcard 
+          go install ./vendor/github.com/alecthomas/gometalinter
+          go install ./vendor/golang.org/x/lint/golint
+          go install ./vendor/github.com/fzipp/gocyclo/cmd/gocyclo
+          go install ./vendor/github.com/gordonklaus/ineffassign
+          go install ./vendor/github.com/client9/misspell/cmd/misspell
+          go install honnef.co/go/tools/cmd/staticcheck@latest
+          go install ./cmd/goreportcard-cli
 
-    - name: Run staticcheck
-      run: staticcheck ./...
-
-    - name: Install golint
-      run: go install golang.org/x/lint/golint@latest
-
-    - name: Run golint
-      run: golint ./...
+   - name: Run Tools
+   - run: | 
+   goreportcard-cli ./...
+   staticcheck ./...
 
    
