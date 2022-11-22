@@ -58,7 +58,7 @@ func sameOpGen(len int) {
 func main() {
 	start := time.Now()
 	var wg sync.WaitGroup
-	//var mu sync.Mutex
+	var mu sync.Mutex
 	evenCh := make(chan int, 1)
 	oddCh := make(chan int, 1)
 
