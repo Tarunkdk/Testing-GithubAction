@@ -30,7 +30,6 @@ jobs:
     - name : Install goreportcard tool
       run: |
           go get github.com/gojp/goreportcard 
-          cd goreportcard 
           go install ./vendor/github.com/alecthomas/gometalinter
           go install ./vendor/golang.org/x/lint/golint
           go install ./vendor/github.com/fzipp/gocyclo/cmd/gocyclo
