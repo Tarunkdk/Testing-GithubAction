@@ -29,16 +29,14 @@ jobs:
 
     - name : Install goreportcard tool
       run: |
-          go get github.com/gojp/goreportcard 
-          go mod tidy
-          go mod vendor
-          go install ./vendor/github.com/alecthomas/gometalinter
-          go install ./vendor/golang.org/x/lint/golint
-          go install ./vendor/github.com/fzipp/gocyclo/cmd/gocyclo
-          go install ./vendor/github.com/gordonklaus/ineffassign
-          go install ./vendor/github.com/client9/misspell/cmd/misspell
+          
+          go install github.com/alecthomas/gometalinter@latest
+          go install golang.org/x/lint/golint@latest
+          go install github.com/fzipp/gocyclo/cmd/gocyclo@latest
+          go install github.com/gordonklaus/ineffassign@latest
+          go install github.com/client9/misspell/cmd/misspell@latest
           go install honnef.co/go/tools/cmd/staticcheck@latest
-          go install ./cmd/goreportcard-cli
+          go install github.com/gojp/goreportcard/cmd/goreportcard-cli@latest
 
     - name: Run Tools
       run: | 
