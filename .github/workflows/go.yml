@@ -22,13 +22,13 @@ jobs:
       run: go mod verify
 
     - name: Build
-       run: go build -v ./...
+      run: go build -v ./...
 
     - name: Run go vet
-       run: go vet ./...
+      run: go vet ./...
 
     - name : Install goreportcard tool
-     run: |
+      run: |
           go get github.com/gojp/goreportcard 
           cd goreportcard 
           go install ./vendor/github.com/alecthomas/gometalinter
