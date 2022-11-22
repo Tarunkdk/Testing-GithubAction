@@ -41,7 +41,10 @@ jobs:
 
     - name: Run Tools
       run: | 
-          goreportcard-cli ./...
+        maker=goreportcard-cli ./...
           staticcheck ./...
+    
+    - name : Echo output
+      run : echo "::$maker::"  
 
    
