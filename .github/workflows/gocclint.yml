@@ -16,8 +16,8 @@ jobs:
   golangci:
     strategy:
       matrix:
-        go: [1.18]
-        os: [unbuntu-latest]
+        go: 1.18
+        os: unbuntu-latest
     name: lint
     runs-on: ${{ matrix.os }}
     steps:
