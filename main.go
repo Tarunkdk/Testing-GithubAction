@@ -73,8 +73,6 @@ func main() {
 
 	//wg.Wait()
 	fmt.Println(time.Since(start))
-	intrest := 5
-	fmt.Println(intrest)
 	fmt.Println("main function finished executing")
 
 }
