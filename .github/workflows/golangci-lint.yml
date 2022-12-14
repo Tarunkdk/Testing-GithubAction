@@ -14,12 +14,12 @@ permissions:
   contents: read
 jobs:
   name: golangci
-   golangci:
-   strategy:
+  golangci:
+    strategy:
       matrix:
         go: [1.17, 1.18]
         os: [macos-latest, windows-latest, ubuntu-latest]
-   name: lint
+    name: lint
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/setup-go@v3
