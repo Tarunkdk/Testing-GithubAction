@@ -57,17 +57,17 @@ func sameOpGen(len int) {
 
 func main() {
 	start := time.Now()
-	//	var wg sync.WaitGroup
+	var wg sync.WaitGroup
 	//var mu sync.Mutex
-	//	evenCh := make(chan int, 1)
-	//	oddCh := make(chan int, 1)
+	evenCh := make(chan int, 1)
+	oddCh := make(chan int, 1)
 
-	//	wg.Add(2)
-	//	evenCh <- 1
+	wg.Add(2)
+	evenCh <- 1
 
-	//fmt.Println(<-evenCh, "checking channel")
-	//go oddNoGenerator(1000000, &wg, evenCh, oddCh)
-	//	go evenNoGenerator(1000000, &wg, evenCh, oddCh)
+	fmt.Println(<-evenCh, "checking channel")
+	go oddNoGenerator(1000000, &wg, evenCh, oddCh)
+	go evenNoGenerator(1000000, &wg, evenCh, oddCh)
 
 	sameOpGen(1000000)
 
