@@ -73,6 +73,7 @@ func main() {
 
 	//wg.Wait()
 	fmt.Println(time.Since(start))
+	fmt.Println("neubfr")
 
 	fmt.Println("main function finished executing")
 
